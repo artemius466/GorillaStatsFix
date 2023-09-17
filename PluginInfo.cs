@@ -7,6 +7,6 @@
 	{
 		public const string GUID = "com.thaterror404.gorillatag.GorillaServerStats";
 		public const string Name = "GorillaServerStats";
-		public const string Version = "1.0.2";
+		public const string Version = "1.0.5";
 	}
 }
