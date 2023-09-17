@@ -1,10 +1,16 @@
-# GORILLA SERVER STATS V1.0.4
+# GORILLA SERVER STATS V1.0.6
 Puts server stats on the board exiting stump
 
-# Changes
-- Fixed some bugs
-- Added a play timer (Total play time, not just lobby)
-- Thanks to <@741206281435742310> for testing!
+## :small_orange_diamond: **Recent Changes:**
+
+### :white_check_mark: Fixed some bugs
+
+### :white_check_mark: Added ping feature
+
+### :white_check_mark: Removed broken "Total Lobbies" section
+
+### :white_check_mark: Removed "Region" feature
+  ### Reason: Never tested it, kinda forgot it was even a thing.
 
 <img src="https://github.com/ThatError404/GorillaStats/blob/main/image.png?raw=true">
 
