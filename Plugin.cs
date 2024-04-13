@@ -19,7 +19,7 @@ namespace GorillaServerStats
 {
     [ModdedGamemode]
     [BepInDependency("org.legoandmars.gorillatag.utilla", "1.5.0")]
-    [BepInPlugin("com.thaterror404.gorillatag.SererStats", "ServerStats", "1.0.6")]
+    [BepInPlugin("com.thaterror404.gorillatag.SererStats", "ServerStats", "1.0.7")]
 
     public class Plugin : BaseUnityPlugin
     {
