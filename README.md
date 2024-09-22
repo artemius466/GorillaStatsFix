@@ -2,6 +2,12 @@
 
 > :warning: This is an old repo! This ***definitely*** doesn't work due to updates with Gorilla Tag, so adjust accordingly!
 
+## Showcase
+
+https://github.com/user-attachments/assets/03bb2c4c-f77b-4026-877b-08ccdf66fa57
+
+
+
 ## Overview
 The "Gorilla Server Stats" mod provides server statistics in the Gorilla Tag game. These stats include details like the lobby code, the number of players, the master client's nickname, the total number of players across all rooms, and the count of tags in the current room.
 
