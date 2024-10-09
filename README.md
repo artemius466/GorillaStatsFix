@@ -1,6 +1,6 @@
 # Gorilla Server Stats Documentation
 
-> :warning: This is an old repo! This ***definitely*** doesn't work due to updates with Gorilla Tag, so adjust accordingly!
+> :warning: Fixed bruh
 
 ## Showcase
 
