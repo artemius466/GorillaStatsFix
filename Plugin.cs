@@ -1,7 +1,7 @@
 ﻿using System;
 using BepInEx;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 using Utilla;
 using Bepinject;
 using Photon.Pun;
@@ -19,7 +19,7 @@ namespace GorillaServerStats
 {
     [ModdedGamemode]
     [BepInDependency("org.legoandmars.gorillatag.utilla", "1.5.0")]
-    [BepInPlugin("com.thaterror404.gorillatag.SererStats", "ServerStats", "1.0.7")]
+    [BepInPlugin("com.artemius466.gorillatag.ServerStats", "ServerStats", "1.1.0")]
 
     public class Plugin : BaseUnityPlugin
     {
@@ -27,7 +27,7 @@ namespace GorillaServerStats
 
         bool inRoom;
         public GameObject forestSign;
-        public Text signText;
+        public TMP_Text signText;
         public bool init;
         public int tags = 0;
         public int Tagged;
@@ -66,7 +66,7 @@ namespace GorillaServerStats
         {
             if (PhotonNetwork.CurrentRoom == null)
             {
-                return "Hello! Thank you for using ServerStats!\r\n\r\nPlease join a room for stats to appear!";
+                return "Hello! Thank you for using ServerStats!\r\n\r\nFixed by Artemius466";
             } else { 
                 var lobbyCode = PhotonNetwork.CurrentRoom.Name;
                 int playerCount = PhotonNetwork.CurrentRoom.PlayerCount;
@@ -85,12 +85,24 @@ namespace GorillaServerStats
                 NameValueCollection configCollection = System.Web.HttpUtility.ParseQueryString(config);
                 totalLobbies = configCollection["totalLobbies"];
 
+                string gamemode = "";
+
+                if (PhotonNetwork.CurrentRoom != null)
+                {
+                    var currentRoom = PhotonNetwork.NetworkingClient.CurrentRoom;
+                    if (currentRoom.CustomProperties.TryGetValue("gameMode", out var gamemodeObject))
+                    {
+                        gamemode = gamemodeObject as string;
+                    }
+                }
+
                 return "LOBBY CODE: " + lobbyCode +
                     "\r\nPLAYERS: " + playerCount +
                     "\r\nMASTER: " + master.NickName +
                     "\r\nACTIVE PLAYERS: " + totalPlayerCount +
                     "\r\nPLAY TIME: " + playTime +
-                    "\r\nPING: " + PhotonNetwork.GetPing();
+                    "\r\nPING: " + PhotonNetwork.GetPing() + 
+                    "\r\nGamemode: " + gamemode;
             }
 
         }
@@ -98,16 +110,16 @@ namespace GorillaServerStats
         {
             Debug.Log("[ServerStats] Game Initialized.");
             init = true;
-            forestSign = GameObject.Find("Environment Objects/LocalObjects_Prefab/TreeRoom/TreeRoomInteractables/UI/Tree Room Texts/WallScreenForest");
+            forestSign = GameObject.Find("Environment Objects/LocalObjects_Prefab/TreeRoom/ScreenText (1)");
             if (forestSign == null)
             {
                 Debug.LogError("[ServerStats] Could not find ForestSign");
                 return;
             }
-            signText = forestSign.GetComponent<Text>();
+            signText = forestSign.GetComponent<TMP_Text>();
             if (signText == null)
             {
-                Debug.LogError("[ServerStats] Could not find Text component for ForestSign");
+                Debug.LogError("[ServerStats] Could not find TMP_Text component for ForestSign");
                 return;
             }
             if (PhotonNetwork.CurrentRoom == null)
@@ -127,7 +139,7 @@ namespace GorillaServerStats
             {
                 if (forestSign != null)
                 {
-                    signText = forestSign.GetComponent<Text>();
+                    signText = forestSign.GetComponent<TMP_Text>();
                     signText.text = boardStatsUpdate();
                 }
                 else
@@ -147,7 +159,7 @@ namespace GorillaServerStats
             {
                 if (forestSign != null)
                 {
-                    signText = forestSign.GetComponent<Text>();
+                    signText = forestSign.GetComponent<TMP_Text>();
                     signText.text = "WELCOME TO GORILLA TAG!\r\n\r\nPLEASE JOIN A ROOM FOR STATS TO APPEAR!";
                 }
                 else
@@ -165,7 +177,7 @@ namespace GorillaServerStats
         {
             if (forestSign != null)
             {
-                signText = forestSign.GetComponent<Text>();
+                signText = forestSign.GetComponent<TMP_Text>();
                 signText.text = boardStatsUpdate();
             }
             else
@@ -187,7 +199,7 @@ namespace GorillaServerStats
 
             if (forestSign != null)
             {
-                signText = forestSign.GetComponent<Text>();
+                signText = forestSign.GetComponent<TMP_Text>();
                 signText.text = boardStatsUpdate();
             }
             else
@@ -216,7 +228,7 @@ namespace GorillaServerStats
 
             if (forestSign != null)
             {
-                signText = forestSign.GetComponent<Text>();
+                signText = forestSign.GetComponent<TMP_Text>();
                 signText.text = "WELCOME TO GORILLA TAG!\r\n\r\nPLEASE JOIN A ROOM FOR STATS TO APPEAR!";
             }
         }
@@ -233,7 +245,7 @@ namespace GorillaServerStats
                 // Update signText directly here
                 if (forestSign != null)
                 {
-                    signText = forestSign.GetComponent<Text>();
+                    signText = forestSign.GetComponent<TMP_Text>();
                     signText.text = boardStatsUpdate();
                 }
                 else

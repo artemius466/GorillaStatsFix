@@ -26,9 +26,6 @@
     <Reference Include="Cinemachine">
       <HintPath>$(GameAssemblyPath)\Cinemachine.dll</HintPath>
     </Reference>
-    <Reference Include="clipper_library">
-      <HintPath>$(GameAssemblyPath)\clipper_library.dll</HintPath>
-    </Reference>
     <Reference Include="HoneyLib">
       <HintPath>..\..\Downloads\HoneyLib.dll</HintPath>
     </Reference>
@@ -85,6 +82,9 @@
     </Reference>
     <Reference Include="Unity.Mathematics">
       <HintPath>$(GameAssemblyPath)\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Gorilla Tag\BepInEx\plugins\TMPLoader\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>$(GameAssemblyPath)\Unity.Timeline.dll</HintPath>
@@ -209,9 +209,6 @@
     <Reference Include="UnityEngine.TerrainPhysicsModule">
       <HintPath>$(GameAssemblyPath)\UnityEngine.TerrainPhysicsModule.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.TextCoreModule">
-      <HintPath>$(GameAssemblyPath)\UnityEngine.TextCoreModule.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.TextRenderingModule">
       <HintPath>$(GameAssemblyPath)\UnityEngine.TextRenderingModule.dll</HintPath>
     </Reference>
@@ -232,9 +229,6 @@
     </Reference>
     <Reference Include="UnityEngine.UmbraModule">
       <HintPath>$(GameAssemblyPath)\UnityEngine.UmbraModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UNETModule">
-      <HintPath>$(GameAssemblyPath)\UnityEngine.UNETModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityAnalyticsModule">
       <HintPath>$(GameAssemblyPath)\UnityEngine.UnityAnalyticsModule.dll</HintPath>
@@ -292,9 +286,6 @@
     </Reference>
     <Reference Include="Bepinject">
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Gorilla Tag\BepInEx\plugins\Bepinject-Auros\Bepinject.dll</HintPath>
-    </Reference>
-    <Reference Include="ComputerInterface">
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Gorilla Tag\BepInEx\plugins\ComputerInterface\ComputerInterface.dll</HintPath>
     </Reference>
     <Reference Include="Zenject">
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Gorilla Tag\BepInEx\plugins\Extenject\Zenject.dll</HintPath>
